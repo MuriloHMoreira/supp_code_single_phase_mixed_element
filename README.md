@@ -7,7 +7,7 @@ Supporting code to "Finite element implementation of a thermohygro model for por
 - [pygmsh](https://pypi.org/project/pygmsh/)
 - [FEniCS](https://fenicsproject.org/)
 
-# ## License
+# License
 [GPL](https://github.com/MuriloHMoreira/supp_code_FEM_thermohygro/blob/master/LICENSE)
 
 Supplementary code to "Finite element implementation of a thermohygro model for porous materials at high temperatures using the FEniCS platform". Copyright (C) 2020 Murilo Henrique Moreira.
