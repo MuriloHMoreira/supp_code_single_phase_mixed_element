@@ -1,5 +1,5 @@
 # supp_code_FEM_thermohygro
-Supporting code to "Finite element implementation of a thermohygro model for porous materials at high temperatures using the FEniCS platform"
+Supporting code to "Towards a single-phase mixed formulation of refractory castables and structural concrete at high temperature"
 
 # Dependencies
 - [Python 3.6](https://www.python.org/)
@@ -10,7 +10,7 @@ Supporting code to "Finite element implementation of a thermohygro model for por
 # License
 [GPL](https://github.com/MuriloHMoreira/supp_code_FEM_thermohygro/blob/master/LICENSE)
 
-Supplementary code to "Finite element implementation of a thermohygro model for porous materials at high temperatures using the FEniCS platform". Copyright (C) 2020 Murilo Henrique Moreira.
+Supplementary code to "Towards a single-phase mixed formulation of refractory castables and structural concrete at high temperature". Copyright (C) 2020 Murilo Henrique Moreira.
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
