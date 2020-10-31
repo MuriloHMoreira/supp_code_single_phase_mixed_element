@@ -26,8 +26,8 @@ Heating Method:
 HUC - Heating Up Curve - Drying curve of Gong et al., 1995.
 ISO - IS O834:2014 Fire Curve - Fire simulation with the ISO 834 fire curve.
 '''
-# HEATING_CASE = 'ISO'
-HEATING_CASE = 'HUC'
+HEATING_CASE = 'ISO'
+# HEATING_CASE = 'HUC'
 
 
 '''
@@ -121,7 +121,7 @@ elif BATCH_MODE == 'single':
 
         '''
         FORMULATION = 'mixed'
-        INC_SIZE = 'short'
+        INC_SIZE = 'long'
 
         base_dir = './2D_case/'
         if not os.path.exists(base_dir):
@@ -840,9 +840,9 @@ elif N_DIM == 2:
         ResT += (lambda_c * inner(nabla_grad(T), nabla_grad(v_h)) * dx(1)
                  + lambda_inclusion(p_n, T_n) * inner(nabla_grad(T),
                                                  nabla_grad(v_h)) * dx(2))
-        ResT += DeltaH_d * ((w_d(T) - w_d(T_n)) / dt) * v_h * (dx(1) + dx(2))
+        ResT += - DeltaH_d * ((w_d(T) - w_d(T_n)) / dt) * v_h * (dx(1) + dx(2))
         ResT += - DeltaH_e(T_n) * dwdt(p, T, p_n, T_n) * v_h * (dx(1) + dx(2))
-        ResT += (C_pw * (K_matrix(p_n, T_n) / g) * inner(nabla_grad(p_n),
+        ResT += - (C_pw * (K_matrix(p_n, T_n) / g) * inner(nabla_grad(p_n),
                                                         nabla_grad(T_n))
                  * v_h * dx(1) + C_pw * (K_inclusion(p_n, T_n) / g) 
                  * inner(nabla_grad(p_n), nabla_grad(T_n)) * v_h * dx(2))
@@ -911,8 +911,8 @@ elif N_DIM == 2:
                  + DeltaH_d * ((w_d(T) - w_d(T_n)) / dt) * v_h * dx(2))
         ResT += (- DeltaH_e(T_n) * dwdt(p, T, p_n, T_n) * v_h * dx(1)
                  - DeltaH_e(T_n) * dwdt(p, T, p_n, T_n) * v_h * dx(2))
-        ResT += (- C_pw * inner(Jota, nabla_grad(T_n)) * v_h * dx(1)
-                 - C_pw * inner(Jota, nabla_grad(T_n)) * v_h * dx(2))
+        ResT += (- C_pw * inner(Jota_n, nabla_grad(T_n)) * v_h * dx(1)
+                  - C_pw * inner(Jota_n, nabla_grad(T_n)) * v_h * dx(2))
 
         # Boundary conditions for energy balance equation
         ResT += (alpha_T * (T - T_inf)) * v_h * (ds(2) + ds(3) + ds(4))
